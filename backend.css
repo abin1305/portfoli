@@ -1,0 +1,133 @@
+ /* Reset and Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1b1e2f;
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 0 20px;
+    }
+
+
+
+    /* Section */
+    .project-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .section-title span {
+      color: #4ade80;
+    }
+
+    /* Project Container */
+    .projects-container {
+      position: relative;
+    }
+
+    .project-box {
+      display: none;
+    }
+
+    .project-box.active {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .project-number {
+      font-size: 3rem;
+      color: #4ade80;
+      opacity: 0.1;
+    }
+
+    .project-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .project-description {
+      margin: 15px 0;
+      color: #aaa;
+      max-width: 500px;
+    }
+
+    .tech-stack {
+      color: #4ade80;
+      font-weight: 500;
+    }
+
+    .project-links {
+      margin-top: 20px;
+    }
+
+    .project-links a {
+      background: #2d2f3e;
+      padding: 10px;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .project-right {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .project-right img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  
+    height: 400px;
+    }
+
+    .project-nav {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .nav-btn {
+      background: #2d2f3e;
+      color: #4ade80;
+      border: none;
+      padding: 10px;
+      margin-left: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .nav-btn:disabled {
+      color: #444;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 768px) {
+      .project-box {
+        flex-direction: column;
+      }
+    }
