@@ -31,13 +31,13 @@
 
   <div class="nav-actions">
     <i class="ri-menu-3-line hamburger" id="hamburger"></i>
-     <a href="/abiny cv.pdf.pdf"><button class="cv-btn">Download CV</button></a>
+     <a href="/ABIN_Y_Web_Developer_Resume.pdf"><button class="cv-btn">Download Resume</button></a>
   </div>
 </nav>
 <div class="space-bg"></div>
 
 <!-- Hero -->
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-img animate">
     <div class="glow-circle">
       <img src="images/profile.jpg" alt="profile">
@@ -66,9 +66,7 @@
     <div class="socials">
      <a href="https://github.com/abin1305"><i class="ri-github-fill"></i></a> 
       <a href="https://www.linkedin.com/in/abin-y-8538a8295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="ri-linkedin-fill"></i></a>
-      <a href="https://www.instagram.com/abin_y_1305"><i class="ri-instagram-fill"></i></a>
-      <a href="https://twitter.com/abin_y_1305"><i class="ri-twitter-fill"></i></a>
-    </div>
+      </div>
   </div>
 </section>
 
@@ -157,7 +155,7 @@
 
     <div class="project-card">
       <div class="project-icon">
-        <i class="ri-shopping-cart-2-line"></i>
+        <i class="ri-braces-line"></i>
       </div>
       <h3>Frontend Projects</h3>
       <p>
@@ -169,7 +167,7 @@
         <span>CSS</span>
         <span>JavaScript</span>
         <span>bootstrap</span>
-        <span>jquery</span>
+        <span>React.js</span>
         <span>Typescript</span>
 
       </div>
@@ -178,7 +176,7 @@
 
     <div class="project-card">
       <div class="project-icon">
-        <i class="ri-robot-2-line"></i>
+        <i class="ri-stack-line"></i>
       </div>
       <h3>Full stack Projects</h3>
       <p>
@@ -186,12 +184,16 @@
         for dynamic and scalable solutions.
       </p>
       <div class="project-tech">
-        <span>Python</span>
+         <span>Typescript</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>Express.js</span>
        <span>Node.js</span>
         
-        <span>MySQL</span>
+        <span>MongoDB</span>
+        <span>React.js</span>
+       
         
-        <span>Oracle</span>
       </div>
       <a href="/backend.html" class="project-btn">View Project</a>
     </div>
@@ -200,19 +202,36 @@
       <div class="project-icon">
         <i class="ri-robot-2-line"></i>
       </div>
-      <h3>MERN projects</h3>
+      <h3>AI ML Projects</h3>
       <p>
-        MERN stack applications combining MongoDB, Express.js,
-        React.js, and Node.js for robust web solutions.
+        AI-powered applications leveraging Python, TensorFlow, and other machine learning frameworks.
       </p>
       <div class="project-tech">
-        <span>MongoDB</span>
-        <span>Express.js</span>
-       <span>Node.js</span>
-        <span>React.js</span>
+        <span>Python</span>
+        <span>TensorFlow</span>
+        <span>scikit-learn</span>
+        <span>pandas</span>
+        <span>numpy</span>
       </div>
-      <a href="/react.html" class="project-btn">View Project</a>
+      <a href="/aiml.html" class="project-btn">View Project</a>
     </div>
+       <div class="project-card">
+      <div class="project-icon">
+        <i class="ri-bar-chart-line"></i>
+      </div>
+      <h3>Data Analytics Projects</h3>
+      <p>
+        Analyzing and visualizing data to extract insights using tools like Python, Pandas,Numpy, and Matplotlib.
+      </p>
+      <div class="project-tech">
+        <span>Python</span>
+        <span>pandas</span>
+        <span>numpy</span>
+        <span>matplotlib</span>
+      </div>
+      <a href="/data-analytics.html" class="project-btn">View Project</a>
+    </div>
+    
 
   </div>
 </section>
@@ -224,6 +243,22 @@
   </h2>
 
   <div class="internship-container">
+
+    <div class="internship-card">
+      <h3>frondent Development</h3>
+      <p class="company">Codex Techno</p>
+      <p class="duration">july 2025 – aug 2025</p>
+      <p class="desc">
+          Developed and maintained full stack web applications,
+        ensuring seamless integration between frontend and backend.
+      </p>
+      <div class="tech">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>react.js</span>
+      </div>
+    </div>
 
     <div class="internship-card">
       <h3>Full Stack Web Development</h3>
@@ -258,21 +293,7 @@
     </div>
 
 
-        <div class="internship-card">
-      <h3>frondent Development</h3>
-      <p class="company">Codex Techno</p>
-      <p class="duration">july 2025 – aug 2025</p>
-      <p class="desc">
-          Developed and maintained full stack web applications,
-        ensuring seamless integration between frontend and backend.
-      </p>
-      <div class="tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>react.js</span>
-      </div>
-    </div>
+
 
   </div>
 </section>
@@ -298,30 +319,30 @@
       </div>
     </div>
 
-    <form class="contact-form">
+    <form class="contact-form"  action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="736119c6-e64d-4095-81ca-61f1f57c1da2">
       <div class="input-box">
         <i class="ri-user-line"></i>
-        <input type="text" placeholder="Your Name" required />
+        <input type="text" name="name" placeholder="Your Name" required />
       </div>
 
       <div class="input-box">
         <i class="ri-mail-line"></i>
-        <input type="email" placeholder="Your Email" required />
+        <input type="email" name="email" placeholder="Your Email" required />
       </div>
 
       <div class="input-box textarea">
         <i class="ri-message-2-line"></i>
-        <textarea placeholder="Your Message" required></textarea>
+        <textarea name="message" placeholder="Your Message" required></textarea>
       </div>
 
-<button type="submit" id="submit" class="primary-btn">
+<button type="submit" class="primary-btn">
   Send Message
 </button>
 
-<!-- Message box -->
-<div id="statusMsg" class="status-msg">
-  contact form is not working currently. Please email me directly at abiny2323@gmail.com
-</div>
+      <div class="status-msg"></div>
+
+
     </form>
   </div>
 </section>
@@ -332,7 +353,7 @@
 
     <div class="footer-left">
       <h2>Abiny</h2>
-      <p>Web Developer | Designer | Freelancer</p>
+      <p>Web Developer | AI Engineer | Data Analyst</p>
     </div>
 
     <div class="footer-center">
@@ -346,9 +367,7 @@
     <div class="footer-right">
        <a href="https://github.com/abin1305"><i class="ri-github-fill"></i></a> 
       <a href="https://www.linkedin.com/in/abin-y-8538a8295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="ri-linkedin-fill"></i></a>
-      <a href="https://www.instagram.com/abin_y_1305"><i class="ri-instagram-fill"></i></a>
-      <a href="https://twitter.com/abin_y_1305"><i class="ri-twitter-fill"></i></a>
-    </div>
+     </div>
 
   </div>
 

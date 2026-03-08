@@ -6,6 +6,10 @@
 
 }
 
+html,body{
+  scroll-behavior: smooth;
+}
+
 body {
   transition: 0.3s;
   background: linear-gradient(to bottom right, #1b112e, #0a0416);
@@ -805,12 +809,22 @@ body.light {
   }
 }
 .status-msg {
-  margin-top: 12px;
-  padding: 10px 14px;
-  border: 2px solid red;
-  color: red;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 5px;
   font-size: 14px;
-  width: fit-content;
-  display: none;
-  border-radius: 4px;
+  text-align: center;
+  display: none; /* Hidden by default */
+}
+
+.status-msg.success {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.status-msg.error {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  border: 1px solid #dc3545;
 }

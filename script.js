@@ -69,21 +69,47 @@ function revealOnScroll() {
   });
 }
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("submit");
-  const msg = document.getElementById("statusMsg");
+/* CONTACT FORM HANDLING */
+const contactForm = document.querySelector('.contact-form');
+const statusMessage = document.querySelector('.status-msg');
 
-  btn.onclick = (e) => {
-    e.preventDefault();
+contactForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
-    msg.style.display = "block";
+  statusMessage.innerHTML = 'Sending...';
+  statusMessage.style.display = 'block';
+  statusMessage.className = 'status-msg';
 
-    setTimeout(() => {
-      msg.style.display = "none";
-    }, 5000);
-  };
+  fetch(form.action, {
+    method: form.method,
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+    body: json,
+  })
+    .then(async (response) => {
+      let jsonResponse = await response.json();
+      if (response.status == 200) {
+        statusMessage.innerHTML = jsonResponse.message;
+        statusMessage.classList.add('success');
+        form.reset(); // This clears the form fields
+      } else {
+        statusMessage.innerHTML = jsonResponse.message;
+        statusMessage.classList.add('error');
+      }
+    })
+    .catch((error) => {
+      statusMessage.innerHTML = 'Something went wrong!';
+      statusMessage.classList.add('error');
+    })
+    .finally(() => {
+      setTimeout(() => {
+        statusMessage.style.display = 'none';
+      }, 5000);
+    });
 });
-
