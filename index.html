@@ -1,385 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Abin Y - Software Engineer, Full Stack Web Developer, AI Engineer & Data Analyst. Portfolio showcasing projects in React, Node.js, Python, MERN stack, and Machine Learning." />
+  <meta name="keywords"
+    content="Abin Y, Software Engineer, Full Stack Developer, Portfolio, React, Node.js, Python, MERN, AI, Data Analytics, Web Developer" />
+  <meta name="author" content="Abin Y" />
+  <title>Abin Y | Portfolio - Software Engineer & Full Stack Developer</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  <!-- Devicon Icons -->
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-/>
-
 </head>
-<body class="dark">
 
-<!-- Navbar -->
-<nav class="navbar animate">
-  <h2 class="logo">Portfolio</h2>
+<body class="dark-theme">
 
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">about</a></li>
-    <li><a href="#skills">skills</a></li>
-    <li><a href="#internships">internships</a></li>
-    <li><a href="#projects">projects</a></li>
-    <li><a href="#contact">contact</a></li>
-  </ul>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scrollProgress"></div>
 
-  <div class="nav-actions">
-    <i class="ri-menu-3-line hamburger" id="hamburger"></i>
-     <a href="/ABIN_Y_Web_Developer_Resume.pdf"><button class="cv-btn">Download Resume</button></a>
-  </div>
-</nav>
-<div class="space-bg"></div>
+  <!-- Custom Cursor Glow -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
 
-<!-- Hero -->
-<section class="hero" id="home">
-  <div class="hero-img animate">
-    <div class="glow-circle">
-      <img src="images/profile.jpg" alt="profile">
+  <!-- Header / Navigation -->
+  <header class="navbar-header" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>Abin<span class="logo-accent">.dev</span> <span
+          class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active"><i class="ri-home-4-line"></i> Home</a></li>
+          <li><a href="#about" class="nav-link"><i class="ri-user-line"></i> About</a></li>
+          <li><a href="#skills" class="nav-link"><i class="ri-code-s-slash-line"></i> Skills</a></li>
+          <li><a href="#experience" class="nav-link"><i class="ri-briefcase-line"></i> Experience</a></li>
+          <li><a href="#projects" class="nav-link"><i class="ri-folder-code-line"></i> Projects</a></li>
+          <li><a href="#contact" class="nav-link"><i class="ri-mail-send-line"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="ABIN_Y_Data_Analyst_Web_Developer_Resume.pdf" target="_blank" download class="btn btn-outline cv-btn">
+          <i class="ri-download-line"></i> <span>Resume</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-container container">
+        <div class="hero-content">
+          <div class="status-pill animate-up">
+            <span class="pulse-dot"></span> Available for Hire & Opportunities
+          </div>
+
+          <h1 class="hero-title animate-up">
+            Hi, I'm <span class="text-gradient">Abin Y</span>
+          </h1>
+
+          <h2 class="hero-subtitle animate-up">
+            I am a <span id="typing" class="typing-text"></span><span class="cursor-blink">|</span>
+          </h2>
+
+          <p class="hero-desc animate-up">
+            Passionate Software Engineer turning complex ideas into intuitive, scalable, and high-performance digital
+            experiences across Full Stack Web, Artificial Intelligence, and Data Analytics.
+          </p>
+
+          <div class="hero-buttons animate-up">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore My Work</span> <i class="ri-arrow-right-line"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Me</span> <i class="ri-message-3-line"></i>
+            </a>
+            <a href="ABIN_Y_Data_Analyst_Web_Developer_Resume.pdf" target="_blank" download class="btn btn-glass">
+              <i class="ri-file-download-line"></i> <span>Download Resume</span>
+            </a>
+          </div>
+
+          <div class="hero-socials animate-up">
+            <span class="social-label">Connect with me:</span>
+            <a href="https://github.com/abin1305" target="_blank" aria-label="GitHub" class="social-icon"><i
+                class="ri-github-fill"></i></a>
+            <a href="https://www.linkedin.com/in/abin-y-8538a8295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank" aria-label="LinkedIn" class="social-icon"><i class="ri-linkedin-fill"></i></a>
+            <a href="mailto:abiny2323@gmail.com" aria-label="Email" class="social-icon"><i class="ri-mail-fill"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-visual animate-up">
+          <div class="avatar-card">
+            <div class="avatar-glow-bg"></div>
+            <div class="avatar-frame">
+              <img src="images/profile.jpg" alt="Abin Y Profile" class="profile-img" />
+            </div>
+            <div class="floating-badge badge-1">
+              <i class="ri-reactjs-line"></i> <span>React & Node</span>
+            </div>
+            <div class="floating-badge badge-2">
+              <i class="ri-terminal-box-line"></i> <span>Python & AI</span>
+            </div>
+            <div class="floating-badge badge-3">
+              <i class="ri-pie-chart-line"></i> <span>Data Analytics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Counter Bar -->
+      <div class="metrics-bar container">
+        <div class="metric-item">
+          <h3 class="metric-number"><span class="counter" data-target="26" id="count-all">0</span>+</h3>
+          <p class="metric-label">Completed Projects</p>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <h3 class="metric-number"><span class="counter" data-target="6">0</span>+</h3>
+          <p class="metric-label">Industry Internships</p>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <h3 class="metric-number"><span class="counter" data-target="10">0</span>+</h3>
+          <p class="metric-label">Tech Stack Mastered</p>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <h3 class="metric-number"><span class="counter" data-target="98">0</span>%</h3>
+          <p class="metric-label">Code Quality & Passion</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section" id="about">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">&lt;about&gt;</span>
+          <h2 class="section-title">Let Me <span>Introduce</span> Myself</h2>
+          <p class="section-subtitle">Blending engineering fundamentals with creative web development</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-col">
+            <div class="about-card-frame">
+              <img src="images/indro.jpg" alt="Abin Y Working" class="about-img" />
+              <div class="experience-card">
+                <i class="ri-verified-badge-line"></i>
+                <div>
+                  <h4>Full Stack & AI</h4>
+                  <p>Building Next-Gen Apps</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content-col">
+            <div class="about-tabs">
+              <button class="about-tab-btn active" data-tab="overview">Overview</button>
+              <button class="about-tab-btn" data-tab="focus">Tech Focus</button>
+              <button class="about-tab-btn" data-tab="highlights">Highlights</button>
+            </div>
+
+            <div class="tab-content active" id="tab-overview">
+              <p class="about-text">
+                I am a dedicated <strong>Software Engineer</strong> with a passion for designing modern, scalable web
+                applications and intelligent solutions. I thrive on bringing complex concepts to life through clean
+                architecture and responsive user interfaces.
+              </p>
+              <p class="about-text">
+                My domain expertise bridges <strong>Full Stack MERN Development</strong>, <strong>Artificial
+                  Intelligence/Machine Learning</strong> with Python, and <strong>Data Analytics</strong>. I enjoy
+                creating seamless interactions between powerful backend APIs and lightning-fast frontend applications.
+              </p>
+            </div>
+
+            <div class="tab-content" id="tab-focus">
+              <ul class="focus-list">
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Full Stack Engineering:</strong> Building dynamic
+                  web applications using React.js, Node.js, Express.js, and MongoDB.</li>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>AI & Machine Learning:</strong> Developing
+                  intelligent predictive models and automation solutions in Python using TensorFlow and Scikit-Learn.
+                </li>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Data Analytics:</strong> Transforming complex
+                  datasets into clear, actionable business visual insights with Pandas, Numpy, and Matplotlib.</li>
+                <li><i class="ri-checkbox-circle-fill"></i> <strong>Responsive Design:</strong> Crafting pixel-perfect,
+                  accessible, and fast web experiences with CSS3, Tailwind, and Bootstrap.</li>
+              </ul>
+            </div>
+
+            <div class="tab-content" id="tab-highlights">
+              <div class="highlights-grid">
+                <div class="highlight-item">
+                  <i class="ri-code-box-line"></i>
+                  <h4>Polyglot Developer</h4>
+                  <p>Proficient in Python, Java, C, TypeScript, and JavaScript.</p>
+                </div>
+                <div class="highlight-item">
+                  <i class="ri-git-branch-line"></i>
+                  <h4>Version Control</h4>
+                  <p>Structured Git workflows & collaborative open-source practice.</p>
+                </div>
+                <div class="highlight-item">
+                  <i class="ri-database-2-line"></i>
+                  <h4>Data Systems</h4>
+                  <p>Experienced in SQL, MongoDB, and RESTful API integrations.</p>
+                </div>
+                <div class="highlight-item">
+                  <i class="ri-rocket-line"></i>
+                  <h4>Fast Learner</h4>
+                  <p>Quick to adopt emerging technologies and frameworks.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-actions">
+              <a href="#contact" class="btn btn-primary"><i class="ri-chat-1-line"></i> Let's Collaborate</a>
+              <a href="https://github.com/abin1305" target="_blank" class="btn btn-secondary"><i
+                  class="ri-github-line"></i> GitHub Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section section" id="skills">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">&lt;skills&gt;</span>
+          <h2 class="section-title">Professional <span>Tech Stack</span></h2>
+          <p class="section-subtitle">Core technologies and tools I utilize to craft modern software solutions</p>
+        </div>
+
+        <!-- Skill Filter Tabs -->
+        <div class="skill-category-tabs">
+          <button class="skill-tab active" data-skill-category="all">All Tech</button>
+          <button class="skill-tab" data-skill-category="languages">Languages</button>
+          <button class="skill-tab" data-skill-category="frontend">Frontend</button>
+          <button class="skill-tab" data-skill-category="backend">Backend & DB</button>
+          <button class="skill-tab" data-skill-category="ai-data">AI & Data Tools</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid">
+          <!-- Languages -->
+          <div class="skill-card" data-category="languages">
+            <i class="devicon-javascript-plain colored"></i>
+            <span>JavaScript</span>
+          </div>
+
+          <div class="skill-card" data-category="languages">
+            <i class="devicon-python-plain colored"></i>
+            <span>Python</span>
+          </div>
+          <div class="skill-card" data-category="languages">
+            <i class="devicon-java-plain colored"></i>
+            <span>Java</span>
+          </div>
+          <div class="skill-card" data-category="languages">
+            <i class="devicon-c-plain colored"></i>
+            <span>C</span>
+          </div>
+          <div class="skill-card" data-category="languages">
+            <i class="devicon-html5-plain colored"></i>
+            <span>HTML5</span>
+          </div>
+          <div class="skill-card" data-category="languages">
+            <i class="devicon-css3-plain colored"></i>
+            <span>CSS3</span>
+          </div>
+
+
+          <!-- Frontend -->
+          <div class="skill-card" data-category="frontend">
+            <i class="devicon-react-original colored"></i>
+            <span>React.js</span>
+          </div>
+          <div class="skill-card" data-category="frontend">
+            <i class="devicon-tailwindcss-plain colored"></i>
+            <span>Tailwind CSS</span>
+          </div>
+          <div class="skill-card" data-category="frontend">
+            <i class="devicon-bootstrap-plain colored"></i>
+            <span>Bootstrap</span>
+          </div>
+          <div class="skill-card" data-category="frontend">
+            <i class="devicon-jquery-plain colored"></i>
+            <span>jQuery</span>
+          </div>
+
+
+          <!-- Backend & Database -->
+          <div class="skill-card" data-category="backend">
+            <i class="devicon-nodejs-plain colored"></i>
+            <span>Node.js</span>
+          </div>
+          <div class="skill-card" data-category="backend">
+            <i class="devicon-express-original colored"></i>
+            <span>Express.js</span>
+          </div>
+          <div class="skill-card" data-category="backend">
+            <i class="devicon-mongodb-plain colored"></i>
+            <span>MongoDB</span>
+          </div>
+          <div class="skill-card" data-category="backend">
+            <i class="devicon-mysql-plain colored"></i>
+            <span>MySQL</span>
+          </div>
+
+
+          <!-- AI & Data -->
+          <div class="skill-card" data-category="ai-data">
+            <i class="devicon-pandas-plain colored"></i>
+            <span>Pandas</span>
+          </div>
+          <div class="skill-card" data-category="ai-data">
+            <i class="devicon-numpy-plain colored"></i>
+            <span>NumPy</span>
+          </div>
+          <div class="skill-card" data-category="ai-data">
+            <i class="devicon-git-plain colored"></i>
+            <span>Git</span>
+          </div>
+          <div class="skill-card" data-category="ai-data">
+            <i class="devicon-github-plain colored"></i>
+            <span>GitHub</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience / Internships Section -->
+    <section class="experience-section section" id="experience">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">&lt;experience&gt;</span>
+          <h2 class="section-title">Industry <span>Internships</span></h2>
+          <p class="section-subtitle">Real-world engineering experience across frontend, full stack, and AI development
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-role">Frontend Development Intern</span>
+                <span class="timeline-date"><i class="ri-calendar-line"></i> July 2025 – Aug 2025</span>
+              </div>
+              <h4 class="timeline-company"><i class="ri-building-line"></i> Codex Techno</h4>
+              <p class="timeline-desc">
+                Engaged in developing client-facing frontend applications with responsive layouts, modern interactive
+                components, optimized asset loading, and cross-browser rendering reliability.
+              </p>
+              <div class="timeline-tags">
+                <span>React.js</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-role">Full Stack Web Development Intern</span>
+                <span class="timeline-date"><i class="ri-calendar-line"></i> Dec 2024 – Jan 2025</span>
+              </div>
+              <h4 class="timeline-company"><i class="ri-building-line"></i> MotionCut</h4>
+              <p class="timeline-desc">
+                Architected and integrated end-to-end full stack web modules using Node.js, Express, and MongoDB.
+                Designed RESTful API endpoints, handled schema validation, and created dynamic responsive views.
+              </p>
+              <div class="timeline-tags">
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>MongoDB</span>
+                <span>React</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-role">Artificial Intelligence Intern</span>
+                <span class="timeline-date"><i class="ri-calendar-line"></i> Aug 2024 – Sep 2024</span>
+              </div>
+              <h4 class="timeline-company"><i class="ri-building-line"></i> Techmaghi</h4>
+              <p class="timeline-desc">
+                Developed machine learning workflows in Python, performing dataset preprocessing, exploratory data
+                analysis, and predictive modeling for web applications.
+              </p>
+              <div class="timeline-tags">
+                <span>Python</span>
+                <span>Machine Learning</span>
+                <span>Data Analysis</span>
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-role">Data Analytics Intern</span>
+                <span class="timeline-date"><i class="ri-calendar-line"></i> June 2026 – July 2026</span>
+              </div>
+              <h4 class="timeline-company"><i class="ri-building-line"></i>Codec Technologies</h4>
+              <p class="timeline-desc">
+                Utilized Python, Pandas, NumPy, and Matplotlib to clean, analyze, and visualize real-world datasets for
+                actionable insights. </p>
+              <div class="timeline-tags">
+                <span>Python</span>
+                <span>Power BI</span>
+                <span>Data Visualization</span>
+                <span>SQL</span>
+                <span>Tableau</span>
+                <span>Excel</span>
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-role">Web Development Intern</span>
+                <span class="timeline-date"><i class="ri-calendar-line"></i>Aug 2026 - Oct 2026</span>
+              </div>
+              <h4 class="timeline-company"><i class="ri-building-line"></i> ApexPlanet</h4>
+              <p class="timeline-desc">
+                Worked on developing responsive and interactive web pages using HTML, CSS, and JavaScript,
+                focusing on user-friendly interfaces, website functionality, and responsive design.
+              </p>
+              <div class="timeline-tags">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Node.js</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </div>
+          <!-- Item 6 -->
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <span class="timeline-role">Junior Data Analyst – Agribusiness</span>
+                <span class="timeline-date"><i class="ri-calendar-line"></i>Aug 2026 - Sep 2026</span>
+              </div>
+              <h4 class="timeline-company"><i class="ri-building-line"></i> YuvaIntern</h4>
+              <p class="timeline-desc">
+                Analyzed agricultural market data using Python and Pandas to clean datasets, identify market trends, and
+                generate insights for agribusiness decision-making.
+              </p>
+              <div class="timeline-tags">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Excel</span>
+                <span>Power BI</span>
+                <span>Agribusiness</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unified Projects Showcase Section (Replaces separate webpages!) -->
+    <section class="projects-section section" id="projects">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">&lt;portfolio&gt;</span>
+          <h2 class="section-title">All My <span>Projects</span> (26)</h2>
+          <p class="section-subtitle">Explore my work across Full Stack, Frontend, AI/ML, and Data Analytics</p>
+        </div>
+
+        <!-- Search & Filter Controls -->
+        <div class="projects-controls">
+          <div class="search-box">
+            <i class="ri-search-line search-icon"></i>
+            <input type="text" id="projectSearchInput"
+              placeholder="Search project title or tech (e.g. React, Python, MongoDB)..."
+              aria-label="Search Projects" />
+            <button class="clear-search-btn" id="clearSearchBtn" aria-label="Clear Search"><i
+                class="ri-close-line"></i></button>
+          </div>
+
+          <div class="project-filter-tabs">
+            <button class="project-filter-btn active" data-filter="all">All Projects <span class="filter-count"
+                id="count-all">(35)</span></button>
+            <button class="project-filter-btn" data-filter="featured">⭐ Featured <span class="filter-count"
+                id="count-featured">(10)</span></button>
+            <button class="project-filter-btn" data-filter="fullstack">Full Stack <span class="filter-count"
+                id="count-fullstack">(9)</span></button>
+            <button class="project-filter-btn" data-filter="frontend">Frontend <span class="filter-count"
+                id="count-frontend">(11)</span></button>
+            <button class="project-filter-btn" data-filter="aiml">AI & ML <span class="filter-count"
+                id="count-aiml">(2)</span></button>
+            <button class="project-filter-btn" data-filter="analytics">Data Analytics <span class="filter-count"
+                id="count-analytics">(4)</span></button>
+          </div>
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Rendered dynamically by script.js -->
+        </div>
+
+        <!-- Empty Results Message -->
+        <div class="no-projects-found hidden" id="noProjectsMessage">
+          <i class="ri-folder-unknow-line"></i>
+          <h3>No matching projects found</h3>
+          <p>Try searching for a different term or reset your category filter.</p>
+          <button class="btn btn-secondary" id="resetFiltersBtn"><i class="ri-refresh-line"></i> Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section section" id="contact">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">&lt;contact&gt;</span>
+          <h2 class="section-title">Get In <span>Touch</span></h2>
+          <p class="section-subtitle">Let's connect! Have a project, job offer, or just want to say hello?</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Column -->
+          <div class="contact-info-col">
+            <div class="contact-card">
+              <div class="info-icon-wrapper">
+                <i class="ri-mail-send-line"></i>
+              </div>
+              <div class="info-details">
+                <span class="info-label">Direct Email</span>
+                <a href="mailto:abiny2323@gmail.com" class="info-value">abiny2323@gmail.com</a>
+              </div>
+              <button class="copy-btn" data-copy="abiny2323@gmail.com" title="Copy Email"><i
+                  class="ri-file-copy-line"></i></button>
+            </div>
+
+            <div class="contact-card">
+              <div class="info-icon-wrapper">
+                <i class="ri-phone-line"></i>
+              </div>
+              <div class="info-details">
+                <span class="info-label">Phone Number</span>
+                <a href="tel:+919744546371" class="info-value">+91 9744546371</a>
+              </div>
+              <button class="copy-btn" data-copy="+919744546371" title="Copy Phone"><i
+                  class="ri-file-copy-line"></i></button>
+            </div>
+
+            <div class="contact-card">
+              <div class="info-icon-wrapper">
+                <i class="ri-map-pin-line"></i>
+              </div>
+              <div class="info-details">
+                <span class="info-label">Location</span>
+                <span class="info-value">Kerala, India</span>
+              </div>
+            </div>
+
+            <div class="social-connect-card">
+              <h4>Social Profiles</h4>
+              <p>Feel free to message me on LinkedIn or review my code on GitHub.</p>
+              <div class="social-links-row">
+                <a href="https://github.com/abin1305" target="_blank" class="social-btn"><i class="ri-github-fill"></i>
+                  GitHub</a>
+                <a href="https://www.linkedin.com/in/abin-y-8538a8295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank" class="social-btn"><i class="ri-linkedin-fill"></i> LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="contact-form-col">
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+              <input type="hidden" name="access_key" value="736119c6-e64d-4095-81ca-61f1f57c1da2">
+
+              <h3 class="form-title"><i class="ri-send-plane-fill"></i> Send Me a Message</h3>
+
+              <div class="input-group">
+                <div class="input-wrapper">
+                  <i class="ri-user-line input-icon"></i>
+                  <input type="text" name="name" placeholder="Your Name" required />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div class="input-wrapper">
+                  <i class="ri-mail-line input-icon"></i>
+                  <input type="email" name="email" placeholder="Your Email" required />
+                </div>
+              </div>
+
+              <div class="input-group">
+                <div class="input-wrapper textarea-wrapper">
+                  <i class="ri-message-2-line input-icon"></i>
+                  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                <span>Send Message</span> <i class="ri-send-plane-line"></i>
+              </button>
+
+              <div class="status-msg" id="statusMessage"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Detail Modal -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Project Modal"><i
+          class="ri-close-line"></i></button>
+
+      <div class="modal-body">
+        <div class="modal-image-col">
+          <img id="modalImage" src="" alt="Project Preview" />
+        </div>
+        <div class="modal-info-col">
+          <span class="modal-badge" id="modalCategory">Category</span>
+          <h2 id="modalTitle">Project Title</h2>
+          <p class="modal-desc" id="modalDescription">Detailed description...</p>
+
+          <div class="modal-tech-wrapper">
+            <h4>Technologies Used:</h4>
+            <div class="modal-tech-tags" id="modalTechTags"></div>
+          </div>
+
+          <div class="modal-links" id="modalLinks">
+            <a href="#" target="_blank" id="modalGithubLink" class="btn btn-secondary"><i class="ri-github-fill"></i>
+              View Repository</a>
+            <a href="#" target="_blank" id="modalLiveLink" class="btn btn-primary"><i class="ri-external-link-line"></i>
+              Live Demo</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="hero-content animate">
-    <p>Hello, I'm</p>
-    <h1>Abin Y</h1>
-    <h3>And I'm a <span id="typing"></span></h3><br>
-
-    <p class="desc">
-      I build modern, responsive websites with clean design  <br>
-      and efficient code and Turning ideas into interactive and <br>
-      visually engaging web experiences.
-    </p>
-<br>
-
-    <div class="buttons">
-       <a href="#projects"><button class="primary">my projects</button></a>
-     <a href="#contact"><button class="primary">Contact Me</button></a> 
-    </div>
-
-
-    <br>
-    <div class="socials">
-     <a href="https://github.com/abin1305"><i class="ri-github-fill"></i></a> 
-      <a href="https://www.linkedin.com/in/abin-y-8538a8295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="ri-linkedin-fill"></i></a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-bracket">&lt;</span>Abin<span class="logo-accent">.dev</span> <span
+            class="logo-bracket">/&gt;</span>
+        </a>
+        <p>Software Engineer | Full Stack Developer | AI & Data Enthusiast</p>
       </div>
-  </div>
-</section>
 
-
-<section class="about-section animate" id="about">
-  <div class="about-container">
-
-    <div class="about-text">
-      <h2>LET ME <span>INTRODUCE</span> MYSELF</h2>
-
-      <p>
-        I'm a <strong>Software Engineer</strong> who loves transforming ideas into
-        reliable, scalable <br> products.  Over time, I’ve explored several technologies
-        and found my passion in <br> building high-performance systems and intuitive
-        user experiences.
-      </p>
-
-      <p>
-        I'm proficient in
-        <span class="highlight">Python</span>,
-        <span class="highlight">C</span>,
-        <span class="highlight">Java</span>,
-        <span class="highlight">React.js</span>,
-        <span class="highlight">Node.js</span>,
-        and I enjoy working across both <br> backend and frontend stacks.
-      </p>
-
-      <p>
-        My key areas of interest include developing
-        <span class="highlight">Web Applications</span>,
-        <span class="highlight">MERN Stack Projects</span>, <br>
-        and exploring modern scalable architectures.
-      </p>
-
-      <p>
-        Whenever possible, I love building projects using
-        <span class="highlight">Node.js</span> and modern frameworks like <br>
-        <span class="highlight">React.js</span>.
-      </p>
-    </div>
-
-    <div class="about-avatar">
-      <img src="/images/indro.jpg" alt="Soumyajit Behera">
-    </div>
-
-  </div>
-</section>
-
-
-<section class="skills-section  animate" id="skills">
-  <h2>Professional <span>Skills</span></h2>
-
-  <div class="skills-grid">
-
-    <div class="skill"><i class="devicon-c-plain"></i> C</div>
-    <div class="skill"><i class="devicon-javascript-plain"></i> JavaScript</div>
-    <div class="skill"><i class="devicon-typescript-plain"></i> TypeScript</div>
-    <div class="skill"><i class="devicon-html5-plain"></i> HTML</div>
-    <div class="skill"><i class="devicon-css3-plain"></i> CSS</div>
-    <div class="skill"><i class="devicon-nodejs-plain"></i> Node.js</div>
-    <div class="skill"><i class="devicon-react-original"></i> React.js</div>
-
-    <div class="skill"><i class="devicon-mongodb-plain"></i> MongoDB</div>
-    <div class="skill"><i class="devicon-express-original"></i> Express.js</div>
-    <div class="skill"><i class="devicon-git-plain"></i> Git</div>
-    <div class="skill"><i class="devicon-github-plain"></i> GitHub</div>
-    <div class="skill"><i class="devicon-python-plain"></i> Python</div>
-    <div class="skill"><i class="devicon-java-plain"></i> Java</div>
-
-    <div class="skill"><i class="devicon-tailwindcss-plain"></i> Tailwind CSS</div>
-    <div class="skill"><i class="devicon-bootstrap-plain"></i> Bootstrap</div>
-    <div class="skill"><i class="devicon-mysql-plain"></i> MySQL</div>
-    <div class="skill"><i class="devicon-oracle-original"></i> Oracle</div>
-<div class="skill"><i class="devicon-bash-plain"></i> bash</div>
-<div class="skill"><i class="devicon-jquery-plain"></i> jquery</div>
-<div class="skill"><i class="devicon-wordpress-plain"></i> wordpress</div>
-
-  </div>
-</section>
-
-
-<section class="projects section animate" id="projects">
-  <h2 class="section-title">My <span>Projects</span></h2>
-
-  <div class="projects-grid">
-
-    <div class="project-card">
-      <div class="project-icon">
-        <i class="ri-braces-line"></i>
+      <div class="footer-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </div>
-      <h3>Frontend Projects</h3>
-      <p>
-        A collection of responsive and modern frontend web applications
-        built with HTML, CSS, and JavaScript.
-      </p>
-      <div class="project-tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>bootstrap</span>
-        <span>React.js</span>
-        <span>Typescript</span>
 
-      </div>
-      <a href="/frondent.html" class="project-btn">View Projects</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-icon">
-        <i class="ri-stack-line"></i>
-      </div>
-      <h3>Full stack Projects</h3>
-      <p>
-        Full stack web applications featuring MERN stack technologies
-        for dynamic and scalable solutions.
-      </p>
-      <div class="project-tech">
-         <span>Typescript</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>Express.js</span>
-       <span>Node.js</span>
-        
-        <span>MongoDB</span>
-        <span>React.js</span>
-       
-        
-      </div>
-      <a href="/backend.html" class="project-btn">View Project</a>
-    </div>
-
-    <div class="project-card">
-      <div class="project-icon">
-        <i class="ri-robot-2-line"></i>
-      </div>
-      <h3>AI ML Projects</h3>
-      <p>
-        AI-powered applications leveraging Python, TensorFlow, and other machine learning frameworks.
-      </p>
-      <div class="project-tech">
-        <span>Python</span>
-        <span>TensorFlow</span>
-        <span>scikit-learn</span>
-        <span>pandas</span>
-        <span>numpy</span>
-      </div>
-      <a href="/aiml.html" class="project-btn">View Project</a>
-    </div>
-       <div class="project-card">
-      <div class="project-icon">
-        <i class="ri-bar-chart-line"></i>
-      </div>
-      <h3>Data Analytics Projects</h3>
-      <p>
-        Analyzing and visualizing data to extract insights using tools like Python, Pandas,Numpy, and Matplotlib.
-      </p>
-      <div class="project-tech">
-        <span>Python</span>
-        <span>pandas</span>
-        <span>numpy</span>
-        <span>matplotlib</span>
-      </div>
-      <a href="/data-analytics.html" class="project-btn">View Project</a>
-    </div>
-    
-
-  </div>
-</section>
-
-
-<section class="internships animate" id="internships">
-  <h2 class="section-title">
-    My <span>Internships</span>
-  </h2>
-
-  <div class="internship-container">
-
-    <div class="internship-card">
-      <h3>frondent Development</h3>
-      <p class="company">Codex Techno</p>
-      <p class="duration">july 2025 – aug 2025</p>
-      <p class="desc">
-          Developed and maintained full stack web applications,
-        ensuring seamless integration between frontend and backend.
-      </p>
-      <div class="tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>react.js</span>
+      <div class="footer-socials">
+        <a href="https://github.com/abin1305" target="_blank" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="https://www.linkedin.com/in/abin-y-8538a8295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+        <a href="mailto:abiny2323@gmail.com" aria-label="Email"><i class="ri-mail-fill"></i></a>
       </div>
     </div>
 
-    <div class="internship-card">
-      <h3>Full Stack Web Development</h3>
-      <p class="company">MotionCut</p>
-      <p class="duration">dec 2024 – jan 2025</p>
-      <p class="desc">
-        Developed and maintained full stack web applications,
-        ensuring seamless integration between frontend and backend.
-      </p>
-      <div class="tech">
-        <span>Bootstrap</span>
-        <span>node.js</span>
-        <span>MongoDB</span>
-        <span>Express.js</span>
-      </div>
+    <div class="footer-bottom text-center">
+      <p>© 2026 Abin Y. Designed & Built with Passion.</p>
     </div>
+  </footer>
 
-    <div class="internship-card">
-      <h3>artificial intelligence with python</h3>
-      <p class="company">Techmaghi</p>
-      <p class="duration">Aug 2024 – sep 2024</p>
-      <p class="desc">
-          Developed and maintained full stack web applications,
-        ensuring seamless integration between frontend and backend.
-      </p>
-      <div class="tech">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Python</span>
-      </div>
-    </div>
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="ri-arrow-up-s-line"></i>
+  </button>
 
-
-
-
-  </div>
-</section>
-
-
-<section id="contact" class="contact-section animate">
-  <h2 class="section-title">Contact Me</h2>
-  <p class="section-subtitle">Let’s work together or just say hello 👋</p>
-
-  <div class="contact-container">
-    <div class="contact-info">
-      <div class="info-item">
-        <i class="ri-mail-line"></i>
-        <span>abiny2323@gmail.com</span>
-      </div>
-      <div class="info-item">
-        <i class="ri-phone-line"></i>
-        <span>+91 9744546371</span>
-      </div>
-      <div class="info-item">
-        <i class="ri-map-pin-line"></i>
-        <span>Kerala, India</span>
-      </div>
-    </div>
-
-    <form class="contact-form"  action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="736119c6-e64d-4095-81ca-61f1f57c1da2">
-      <div class="input-box">
-        <i class="ri-user-line"></i>
-        <input type="text" name="name" placeholder="Your Name" required />
-      </div>
-
-      <div class="input-box">
-        <i class="ri-mail-line"></i>
-        <input type="email" name="email" placeholder="Your Email" required />
-      </div>
-
-      <div class="input-box textarea">
-        <i class="ri-message-2-line"></i>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-      </div>
-
-<button type="submit" class="primary-btn">
-  Send Message
-</button>
-
-      <div class="status-msg"></div>
-
-
-    </form>
-  </div>
-</section>
-
-
-<footer class="footer animate">
-  <div class="footer-container">
-
-    <div class="footer-left">
-      <h2>Abiny</h2>
-      <p>Web Developer | AI Engineer | Data Analyst</p>
-    </div>
-
-    <div class="footer-center">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-    <div class="footer-right">
-       <a href="https://github.com/abin1305"><i class="ri-github-fill"></i></a> 
-      <a href="https://www.linkedin.com/in/abin-y-8538a8295?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="ri-linkedin-fill"></i></a>
-     </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2025 Abiny. All rights reserved.</p>
-  </div>
-</footer>
-
-
-
-<!-- ScrollReveal -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="script.js"></script>
+  <!-- Script File -->
+  <script src="script.js"></script>
 </body>
+
 </html>
